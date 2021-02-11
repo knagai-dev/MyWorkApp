@@ -52,8 +52,16 @@ export default function App() {
         style={thema.label}>
           切り替え
         </Text>
-        {/* <Profile name="januswel" /> */}
+        <Profile name="knagai" />
       </View>
     </ThemaContext.Provider>
   );
+}
+
+interface Props {
+  name: string
+}
+function Profile(props: Props) {
+  const {thema} = React.useContext(ThemaContext)
+  return <Text style={thema.label}>{props.name}</Text>
 }
